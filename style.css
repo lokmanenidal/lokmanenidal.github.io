@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap');
 
 :root {
-  --primary: #2d5a3d;
-  --primary-light: #4a7c56;
-  --accent: #d4a574;
-  --accent-light: #e8c4a0;
-  --dark: #1a1a1a;
-  --light: #f9f8f6;
+  --primary: #26547C;
+  --primary-light: #26547C;
+  --accent: #C9A44C;
+  --accent-light: #DCC7A1;
+  --dark: #1A1A1A;
+  --light: #F5F5F5;
   --gray: #6b6b6b;
   --success: #52b788;
   --warning: #f4a261;
@@ -260,7 +260,7 @@ h3 {
 }
 /* **************** TOURISME ********************** */
 #tourisme {
-  background-color: #f5f5f5;
+  background-color: #F5F5F5;
   padding: 80px 5%;
 }
 
@@ -311,7 +311,7 @@ h3 {
 }
 
 #tourisme p {
-  background-color: rgba(74, 124, 86, 0.95);
+  background-color: rgba(38, 84, 124, 0.95);
   color: var(--light);
   font-size: 1.3em;
   text-align: center;
