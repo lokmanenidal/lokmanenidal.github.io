@@ -258,6 +258,154 @@ h3 {
   transform: scale(1.08);
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
 }
+/* **************** ADN *************************** */
+#adn {
+  background-color: #1A1A1A;
+  color: #F5F5F5;
+  padding: 100px 5%;
+}
+
+.adn-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.adn-header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.adn-header h2 {
+  font-size: 3em;
+  margin: 0 0 30px 0;
+  color: #C9A44C;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.adn-trait {
+  width: 80px;
+  height: 2px;
+  background-color: #C9A44C;
+  margin: 0 auto;
+}
+
+.adn-intro {
+  text-align: center;
+  margin-bottom: 80px;
+  line-height: 1.8;
+}
+
+.adn-tagline {
+  font-size: 1.8em;
+  color: #C9A44C;
+  font-weight: 600;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+.adn-intro p {
+  font-size: 1.1em;
+  margin: 15px 0;
+  color: #DCC7A1;
+}
+
+.adn-intro strong {
+  color: #C9A44C;
+  font-weight: 600;
+}
+
+.adn-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 50px;
+  margin-bottom: 80px;
+}
+
+.adn-card {
+  background-color: rgba(201, 164, 76, 0.08);
+  border: 1px solid rgba(201, 164, 76, 0.3);
+  padding: 40px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.adn-card:hover {
+  background-color: rgba(201, 164, 76, 0.15);
+  border-color: rgba(201, 164, 76, 0.6);
+  transform: translateY(-5px);
+}
+
+.adn-card h3 {
+  font-size: 1.5em;
+  color: #C9A44C;
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.adn-card p {
+  color: #DCC7A1;
+  line-height: 1.7;
+  margin: 0;
+  font-size: 1em;
+}
+
+.adn-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.adn-card li {
+  color: #DCC7A1;
+  margin: 12px 0;
+  padding-left: 20px;
+  position: relative;
+}
+
+.adn-card li:before {
+  content: "▪";
+  color: #C9A44C;
+  position: absolute;
+  left: 0;
+}
+
+.adn-closing {
+  text-align: center;
+  padding-top: 60px;
+  border-top: 1px solid rgba(201, 164, 76, 0.3);
+}
+
+.adn-closing p {
+  font-size: 1.3em;
+  margin: 20px 0;
+  line-height: 1.6;
+  color: #DCC7A1;
+}
+
+.adn-closing strong {
+  color: #C9A44C;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .adn-header h2 {
+    font-size: 2em;
+  }
+
+  .adn-tagline {
+    font-size: 1.4em;
+  }
+
+  .adn-intro p {
+    font-size: 1em;
+  }
+
+  .adn-closing p {
+    font-size: 1.1em;
+  }
+}
 /* **************** TOURISME ********************** */
 #tourisme {
   background-color: #F5F5F5;
