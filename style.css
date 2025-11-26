@@ -406,6 +406,160 @@ h3 {
     font-size: 1.1em;
   }
 }
+/* **************** LOOKBOOK ************************ */
+#lookbook {
+  background: linear-gradient(135deg, #0F0F0F 0%, #1A1A1A 100%);
+  color: #F5F5F5;
+  padding: 100px 5%;
+}
+
+.lookbook-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.lookbook-header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.lookbook-header h2 {
+  font-size: 3em;
+  margin: 0 0 20px 0;
+  color: #C9A44C;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.lookbook-trait {
+  width: 80px;
+  height: 2px;
+  background-color: #C9A44C;
+  margin: 0 auto 20px;
+}
+
+.lookbook-header p {
+  font-size: 1.2em;
+  color: #DCC7A1;
+  margin: 0;
+  font-style: italic;
+}
+
+.lookbooks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 60px;
+}
+
+.lookbook-item {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: transform 0.3s ease;
+}
+
+.lookbook-item:hover {
+  transform: translateY(-10px);
+}
+
+.lookbook-image {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 4px;
+  aspect-ratio: 3/4;
+  margin-bottom: 30px;
+}
+
+.lookbook-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.lookbook-image:hover img {
+  transform: scale(1.05);
+  filter: brightness(0.85);
+}
+
+.lookbook-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.lookbook-image:hover .lookbook-overlay {
+  opacity: 1;
+}
+
+.lookbook-label {
+  color: #C9A44C;
+  font-size: 1.2em;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.lookbook-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.lookbook-content h3 {
+  font-size: 1.6em;
+  color: #C9A44C;
+  margin: 0 0 15px 0;
+  font-weight: 600;
+}
+
+.lookbook-content p {
+  color: #DCC7A1;
+  line-height: 1.7;
+  margin: 0 0 20px 0;
+  font-size: 1em;
+  flex-grow: 1;
+}
+
+.lookbook-tag {
+  display: inline-block;
+  color: #C9A44C;
+  font-size: 0.85em;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+  .lookbook-header h2 {
+    font-size: 2em;
+  }
+
+  .lookbooks-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .lookbook-image {
+    aspect-ratio: 16/9;
+  }
+
+  .lookbook-content h3 {
+    font-size: 1.4em;
+  }
+
+  .lookbook-content p {
+    font-size: 0.95em;
+  }
+}
 /* **************** TOURISME ********************** */
 #tourisme {
   background-color: #F5F5F5;
