@@ -18,6 +18,7 @@
           <li><a href="#adn">ADN</a></li>
           <li><a href="#lookbook">Lookbooks</a></li>
           <li><a href="#tourisme">Collections</a></li>
+          <li><a href="#shop">Boutique</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
@@ -152,6 +153,91 @@
         <li id="vignoble"><p>Accessoires Tendance</p></li>
       </ul>
     </section>
+    <section id="shop">
+      <div class="shop-container">
+        <div class="shop-header">
+          <h2>BOUTIQUE</h2>
+          <div class="shop-trait"></div>
+          <p>Acquisitions Exclusives</p>
+        </div>
+
+        <div class="shop-grid">
+          <div class="shop-item">
+            <div class="shop-image">
+              <img src="media/phare.JPG" alt="T-shirt Premium">
+              <div class="shop-badge">Exclusif</div>
+            </div>
+            <div class="shop-details">
+              <h3>T-shirt Premium</h3>
+              <p class="shop-description">Coton haute qualité avec finitions minimalistes</p>
+              <div class="shop-price">
+                <span class="price">89€</span>
+              </div>
+              <button class="add-to-cart" data-product="tshirt" data-price="89">Ajouter au panier</button>
+            </div>
+          </div>
+
+          <div class="shop-item">
+            <div class="shop-image">
+              <img src="media/ocean.jpg" alt="Pull Luxe">
+              <div class="shop-badge">Populaire</div>
+            </div>
+            <div class="shop-details">
+              <h3>Pull Luxe</h3>
+              <p class="shop-description">Maille fine et épurée pour l'élégance au quotidien</p>
+              <div class="shop-price">
+                <span class="price">149€</span>
+              </div>
+              <button class="add-to-cart" data-product="pull" data-price="149">Ajouter au panier</button>
+            </div>
+          </div>
+
+          <div class="shop-item">
+            <div class="shop-image">
+              <img src="media/chateau.JPG" alt="Pantalon Essentiel">
+              <div class="shop-badge">Best Seller</div>
+            </div>
+            <div class="shop-details">
+              <h3>Pantalon Essentiel</h3>
+              <p class="shop-description">Coupe intemporelle pour un style minimaliste parfait</p>
+              <div class="shop-price">
+                <span class="price">129€</span>
+              </div>
+              <button class="add-to-cart" data-product="pantalon" data-price="129">Ajouter au panier</button>
+            </div>
+          </div>
+
+          <div class="shop-item">
+            <div class="shop-image">
+              <img src="media/carte.JPG" alt="Accessoires">
+              <div class="shop-badge">Nouveau</div>
+            </div>
+            <div class="shop-details">
+              <h3>Accessoires Signature</h3>
+              <p class="shop-description">Ceintures et bijoux minimalistes de haute gamme</p>
+              <div class="shop-price">
+                <span class="price">79€</span>
+              </div>
+              <button class="add-to-cart" data-product="accessoires" data-price="79">Ajouter au panier</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="cart-summary">
+          <div class="cart-info">
+            <h3>Votre Panier</h3>
+            <div id="cart-items">
+              <p class="empty-cart">Votre panier est vide</p>
+            </div>
+            <div class="cart-total">
+              <span>Total:</span>
+              <span class="total-price">0€</span>
+            </div>
+          </div>
+          <button id="checkout-btn" class="checkout-btn" disabled>Procéder au paiement</button>
+        </div>
+      </div>
+    </section>
     <footer>
       <h2 id="contact">Rejoignez la Communauté LOKMANE</h2>
       <form>
@@ -171,6 +257,55 @@
       </div>
 
     </footer>
+
+    <script>
+      const cart = {};
+
+      document.querySelectorAll('.add-to-cart').forEach(button => {
+        button.addEventListener('click', () => {
+          const product = button.dataset.product;
+          const price = parseFloat(button.dataset.price);
+
+          if (cart[product]) {
+            cart[product].quantity += 1;
+          } else {
+            const productName = button.parentElement.querySelector('h3').textContent;
+            cart[product] = { name: productName, price: price, quantity: 1 };
+          }
+
+          updateCart();
+        });
+      });
+
+      function updateCart() {
+        const cartItems = document.getElementById('cart-items');
+        const total = Object.values(cart).reduce((sum, item) => sum + (item.price * item.quantity), 0);
+        const checkoutBtn = document.getElementById('checkout-btn');
+
+        if (Object.keys(cart).length === 0) {
+          cartItems.innerHTML = '<p class="empty-cart">Votre panier est vide</p>';
+          checkoutBtn.disabled = true;
+        } else {
+          let itemsHTML = '';
+          Object.entries(cart).forEach(([key, item]) => {
+            itemsHTML += `
+              <div class="cart-item">
+                <span class="cart-item-name">${item.name} x ${item.quantity}</span>
+                <span class="cart-item-price">${(item.price * item.quantity).toFixed(2)}€</span>
+              </div>
+            `;
+          });
+          cartItems.innerHTML = itemsHTML;
+          checkoutBtn.disabled = false;
+        }
+
+        document.querySelector('.total-price').textContent = total.toFixed(2) + '€';
+      }
+
+      document.getElementById('checkout-btn').addEventListener('click', () => {
+        alert('Le système de paiement Stripe sera intégré prochainement pour finaliser votre commande.');
+      });
+    </script>
   </body>
 
 </html>
