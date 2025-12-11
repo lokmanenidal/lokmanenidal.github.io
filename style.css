@@ -883,6 +883,157 @@ h3 {
   transition: all 0.3s ease;
   box-shadow: none;
 }
+/* ******************* FOLLOW US ******************** */
+#follow-us {
+  background: linear-gradient(135deg, #F5F5F5 0%, #EFEFEF 100%);
+  padding: 100px 5%;
+}
+
+.follow-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#follow-us h2 {
+  font-size: 3em;
+  margin: 0 0 20px 0;
+  color: var(--primary);
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.follow-trait {
+  width: 80px;
+  height: 2px;
+  background-color: var(--accent);
+  margin: 0 auto 30px;
+}
+
+.follow-subtitle {
+  font-size: 1.1em;
+  color: var(--gray);
+  text-align: center;
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+.cta-instagram {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: var(--accent);
+  color: var(--dark);
+  padding: 16px 40px;
+  border-radius: 8px;
+  font-size: 1em;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0 auto 60px;
+  display: block;
+  width: fit-content;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 20px rgba(201, 164, 76, 0.3);
+}
+
+.cta-instagram:hover {
+  background-color: #B5913E;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(201, 164, 76, 0.5);
+}
+
+.instagram-feed {
+  text-align: center;
+  margin-top: 60px;
+}
+
+.feed-label {
+  font-size: 1.3em;
+  color: var(--primary);
+  margin-bottom: 40px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.feed-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 30px;
+}
+
+.feed-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  aspect-ratio: 1;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.feed-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.feed-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.feed-overlay i {
+  font-size: 3em;
+  color: white;
+}
+
+.feed-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.feed-item:hover img {
+  transform: scale(1.08);
+}
+
+.feed-item:hover .feed-overlay {
+  opacity: 1;
+}
+
+/* ******************* HEADER SOCIAL ICONS ******************** */
+#header-social-icons {
+  margin-left: auto;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+#header-social-icons a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  color: var(--primary);
+  font-size: 1.1em;
+  transition: all 0.3s ease;
+}
+
+#header-social-icons a:hover {
+  color: var(--accent);
+  transform: scale(1.15);
+}
+
 /* ******************* FOOTER ******************** */
 footer {
   background-color: var(--primary);
@@ -1003,6 +1154,10 @@ button:active {
 
 /* ******************** RESPONSIVE ******************** */
 @media (max-width: 768px) {
+  #header-social-icons {
+    display: none;
+  }
+
   nav ul {
     padding: 0 20px;
   }
@@ -1095,5 +1250,19 @@ button:active {
 
   #tourisme {
     padding: 60px 5%;
+  }
+
+  #follow-us h2 {
+    font-size: 2em;
+  }
+
+  .feed-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .cta-instagram {
+    font-size: 0.9em;
+    padding: 14px 30px;
   }
 }
